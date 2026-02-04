@@ -2,6 +2,7 @@ import express from "express";
 import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
 import adminRoutes from "./routes/adminRoutes";
+import productRoutes from "./routes/productRoutes";
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use("/api/auth", authRoutes);
 
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
+
+app.use("/api/products", productRoutes);
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
