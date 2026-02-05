@@ -5,6 +5,7 @@ import adminRoutes from "./routes/adminRoutes";
 import productRoutes from "./routes/productRoutes";
 import purchaseRoutes from "./routes/purchaseRoutes";
 import stripeRoutes from "./routes/stripeRoutes";
+import downloadRoutes from "./routes/downloadRoutes";
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use("/api/products", productRoutes);
 
 app.use("/api/purchases", purchaseRoutes);
 app.use("/api/stripe", stripeRoutes);
+
+app.use("/api/download", downloadRoutes);
 
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
