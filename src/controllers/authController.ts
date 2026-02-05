@@ -32,6 +32,11 @@ export const register = async (req: Request, res: Response) => {
     res.status(201).json({
       message: "User created",
       token: generateToken(user._id.toString()),
+      user: {
+        id: user._id,
+        email: user.email,
+        role: user.role,
+      },
     });
   } catch (error) {
     console.error("REGISTER ERROR:", error);
