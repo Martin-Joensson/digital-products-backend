@@ -6,8 +6,16 @@ import productRoutes from "./routes/productRoutes";
 import purchaseRoutes from "./routes/purchaseRoutes";
 import stripeRoutes from "./routes/stripeRoutes";
 import downloadRoutes from "./routes/downloadRoutes";
+import cors from "cors";
 
 const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:5174",
+    credentials: true,
+  }),
+);
 
 app.use(express.json());
 
